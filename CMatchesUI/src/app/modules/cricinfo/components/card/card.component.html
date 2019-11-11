@@ -1,0 +1,37 @@
+<mat-card class="criccard">
+  <mat-card-header class="header">
+    <mat-icon *ngIf="cricMatch.count >0" aria-label="thumb_up_alt icon">thumb_up_alt</mat-icon>
+    <div *ngIf="cricMatch.count >0">
+      <font color="green">{{cricMatch.count}}</font>
+    </div>
+    <mat-card-title *ngIf="cricMatch.matchType === 'current'">{{cricMatch.team1}} vs {{cricMatch.team2}},
+      {{cricMatch.type}} - {{cricMatch.date | date:short}}</mat-card-title>
+    <mat-card-title *ngIf="cricMatch.matchType === 'old'">{{cricMatch.team1}} vs {{cricMatch.team2}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="body" *ngIf="cricMatch.matchType === 'current'">
+    <p>Toss - {{cricMatch.toss}}</p>
+    <p>Stat - {{cricMatch.stat}}</p>
+    <p>Score - {{cricMatch.score}}</p>
+    <p>Description - {{cricMatch.description}}</p>
+    <p>Winner - {{cricMatch.winner}}</p>
+  </mat-card-content>
+  <mat-card-content class="body" *ngIf="cricMatch.matchType === 'old'">
+    <p>Stat - {{cricMatch.stat}}</p>
+    <p>Score - {{cricMatch.score}}</p>
+    <p>Description - {{cricMatch.description}}</p>
+  </mat-card-content>
+  <mat-card-actions class="button">
+    <button class="addbutton" *ngIf="cricMatch.favouriteType == 'add'" (click)="addButtonClick(cricMatch)"
+      matTooltip="Add to favourites" mat-mini-fab>
+      <mat-icon aria-label="favourite icon">favorite</mat-icon>
+    </button>
+    <button class="deletebutton" *ngIf="cricMatch.favouriteType == 'delete'" (click)="deletebutton(cricMatch)"
+      matTooltip="Delete from favourite" mat-mini-fab>
+      <mat-icon>
+        <i class="material-icons">
+          delete
+        </i>
+      </mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

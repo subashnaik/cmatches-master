@@ -1,0 +1,43 @@
+mat-card{
+    display: flex;
+    flex-direction: column;
+    height: 55vh;
+    width: 40vw;
+    text-align: center;
+    background-color: #c0adad;;
+    margin: auto;
+    margin-bottom: 20vh;
+    
+}
+mat-card-title{
+    color: green;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 15vw;
+    padding-top: 3vh;
+}
+.my-form{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    margin: auto;
+}
+.label{
+    color: #fff;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+mat-icon{
+    margin-right: 1em;
+    color: green;
+}
+.matInputdata{
+    color: green;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.mat-fab, .mat-flat-button, .mat-mini-fab, .mat-raised-button{
+    background: green;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    min-height: 50vh; 
+}
+
+.mat-form-field{
+    padding-left: 80vw;
+    padding-top: 2vh;
+    color: rgb(182, 52, 52);
+}
+
+.matInput{
+    color: #fff;
+}
+
+.label{
+    font-size: 1.2em;
+    font-family: "Acme", sans-serif;
+    color: rgb(182, 52, 52);
+}
+.label1{
+    font-size: 5em;
+    font-family: "Acme", sans-serif;
+    color: #fff;
+    align-content: center;
+    align-items: center;
+    padding-left: 10vw;
+    text-align: center;    
+}
+.mat-form-field-appearance-outline .mat-form-field-outline{
+    columns: #fff !important;
+}
+
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }

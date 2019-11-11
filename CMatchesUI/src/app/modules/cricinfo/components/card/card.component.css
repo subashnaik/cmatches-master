@@ -1,0 +1,41 @@
+.criccard{
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    width: 25vw;
+    margin: 1em;
+    text-align: center;
+    box-shadow: 3px 3px 25px black;
+    background-color: #c0adad;
+    margin-top: 10vh;
+}
+.header{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: auto;
+    color: rgb(128, 0, 0);
+}
+.body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+    background-color: #c0adad;
+    
+}
+.mat-card-subtitle{
+    color: #fff;
+    
+}
+.image{
+    height: 25vh;
+    width: 15vw;
+    margin: auto;
+}
+.mat-feb.mat-accent,.mat-flat-button.mat-accent,.mat-mini-fab.mat-accent,.mat-raised-button.mat-accent{
+    background-color: #9c1148;
+    margin-left: 10px;
+}
+.mat-icons{
+    color: #fff;
+}
+.material-icons{
+    color: #fff;
+}

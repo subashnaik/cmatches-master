@@ -1,0 +1,87 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  mysql:
+    image: mysql:5.5
+    ports:
+      - 3306:3306
+    network_mode: host
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: UserDb
+      MYSQL_USER: approot
+      MYSQL_PASSWORD: root123 
+
+  userservice:
+    image: sbauserservice
+    build: userservice/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mysql
+      - discoveryserver
+      - rabbitmq
+    ports:
+      - 9100:9100
+    healthcheck:
+      test: "exit 0"
+
+  discoveryserver:
+    image: nareshkumardocker/sbadiscoveryserver:v1
+    restart: always
+    network_mode: host
+    ports:
+      - 8761:8761
+    healthcheck:
+      test: "exit 0"
+      
+  gatewayservice:
+    image: nareshkumardocker/sbagatewayserver:v1
+    restart: always
+    network_mode: host
+    ports:
+      - 8765:8765
+    healthcheck:
+      test: "exit 0"
+
+  favouriteservice:
+    image: sbafavouriteservice
+    build: favouriteservice/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mysql
+      - discoveryserver
+      - rabbitmq
+    ports:
+      - 9110:9110
+    healthcheck:
+      test: "exit 0"
+
+  matchrecommendationservice:
+    image: sbamatchrecommendationservice
+    build: matchrecommendationservice/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mysql
+      - discoveryserver
+      - rabbitmq
+    ports:
+      - 9120:9120
+    healthcheck:
+      test: "exit 0"
+
+  angular:
+    image: nareshkumardocker/sbacmatches:v1
+    network_mode: host
+    container_name: angular-docker-1
+    ports:
+      - 4200:4200
+    healthcheck:
+      test: "exit 0"

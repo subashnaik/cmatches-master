@@ -1,0 +1,42 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>User Registration</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="my-form">
+      <mat-form-field>
+        <mat-label class="label">User Name</mat-label>
+        <mat-icon matPrefix>person</mat-icon>
+        <input id="userId" class="matInputdata" matInput [(ngModel)]="user.userId" name="userId" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label class="label">Password</mat-label>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input type="password" id="userPassword" class="matInputdata" matInput [(ngModel)]="user.userPassword"
+          name="userPassword" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label class="label">First name</mat-label>
+        <mat-icon matPrefix>person</mat-icon>
+        <input id="firstName" class="matInputdata" matInput [(ngModel)]="user.firstName" name="firstName" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label class="label">Last name</mat-label>
+        <mat-icon matPrefix>person</mat-icon>
+        <input id="lastName" class="matInputdata" matInput [(ngModel)]="user.lastName" name="lastName"/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label class="label">Email</mat-label>
+        <mat-icon matPrefix>email</mat-icon>
+        <input id="email" class="matInputdata" matInput [(ngModel)]="user.mail" name="mail" required />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="register-user" mat-raised-button color="accent" (click)="register()">Register</button>
+  </mat-card-actions>
+</mat-card>

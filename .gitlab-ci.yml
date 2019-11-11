@@ -1,0 +1,30 @@
+image: 'maven:3-jdk-8'
+
+stages:
+  - test
+  - build
+services:
+  - 'mysql:5.5'
+  - rabbitmq:3-management
+variables:
+  MYSQL_DATABASE: UserDb
+  MYSQL_URL: jdbc:mysql://localhost:3306/UserDb
+  MYSQL_USER: app_root
+  MYSQL_PASSWORD: root
+  MYSQL_ROOT_PASSWORD: root
+  RABBITMQ_DEFAULT_USER: guest
+  RABBITMQ_DEFAULT_PASS: guest
+  AMQP_URL: 'amqp://guest:guest@rabbitmq:5672'
+cache:
+  paths:
+    - .m2/repository
+    - target
+maven-test:
+  stage: test
+  script: "mvn test"
+maven-build:
+  stage: build
+  script: "mvn package"
+  artifacts:
+    paths:
+      - target/*.jar
