@@ -16,5 +16,3 @@ services:
       MYSQL_DATABASE: UserDb
       MYSQL_USER: approot
       MYSQL_PASSWORD: root123 
-
-  
